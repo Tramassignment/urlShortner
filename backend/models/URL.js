@@ -9,7 +9,7 @@ const DB_USERNAME = process.env.DB_USERNAME;
 const DB_PASSWORD = process.env.DB_PASSWORD;
 const DB_HOST = process.env.DB_HOST;
 const DB_NAME = process.env.DB_NAME
-console.log(DB_NAME+"heress")
+console.log(DB_NAME+"here")
 
 
 const sequelize = new Sequelize(DB_NAME,DB_USERNAME,DB_PASSWORD, {
@@ -38,10 +38,15 @@ const URL = sequelize.define('url', {
             model: 'users',
             key: 'id'
         }
+    },
+    hitCount: {
+        type: DataTypes.INTEGER,
+        defaultValue: 0  // Default value for new records
     }
+
 },{
     tableName: 'url',
     timestamps: false,
   });
   
-  module.exports = URL;
+  module.exports = { URL };
