@@ -24,7 +24,7 @@ const URL = sequelize.define('url', {
         defaultValue: Sequelize.UUIDV4
     },
     longUrl: {
-        type: Sequelize.STRING(2048),  // Long enough to accommodate most URLs
+        type: Sequelize.STRING(2048),  
         allowNull: false
     },
     shortUrl: {
@@ -35,14 +35,10 @@ const URL = sequelize.define('url', {
     userId: {
         type: Sequelize.UUID,
         references: {
-            model: 'users',
+            model: 'user',
             key: 'id'
         }
     },
-    hitCount: {
-        type: DataTypes.INTEGER,
-        defaultValue: 0  // Default value for new records
-    }
 
 },{
     tableName: 'url',
