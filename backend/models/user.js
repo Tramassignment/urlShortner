@@ -33,9 +33,13 @@ const User = sequelize.define('user', {
       allowNull: false,
       unique: true
   },
+  password: {
+    type: Sequelize.STRING,
+    allowNull: false
+},
   tier: {
       type: Sequelize.INTEGER,
-      defaultValue: 1  // Assuming tier 1 is the default tier
+      defaultValue: 1  
   },
   requestCount: {
     type: Sequelize.INTEGER,

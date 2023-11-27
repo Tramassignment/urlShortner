@@ -25,7 +25,7 @@ const RequestLog = sequelize.define('request_log', {
     userId: {
         type: Sequelize.UUID,
         references: {
-            model: 'users',
+            model: 'user',
             key: 'id'
         }
     },
